@@ -19,7 +19,7 @@ class OpenLibraryApi {
     final List works = decoded['reading_log_entries'] ?? [];
 
     return works.take(20).map((item) {
-      return BookModel.fromJson(item['work']);
+      return BookModel.fromReadingLogJson(item['work']);
     }).toList();
   }
 
@@ -36,7 +36,7 @@ class OpenLibraryApi {
     final List docs = decoded['docs'] ?? [];
 
     return docs.map((item) {
-      return BookModel.fromJson(item);
+      return BookModel.fromReadingLogJson(item);
     }).toList();
   }
 }

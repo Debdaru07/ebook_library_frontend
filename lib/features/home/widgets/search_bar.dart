@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import '../../../app/routes.dart';
 
 class HomeSearchBar extends StatelessWidget {
@@ -11,12 +12,13 @@ class HomeSearchBar extends StatelessWidget {
       child: AbsorbPointer(
         child: TextField(
           decoration: InputDecoration(
-            hintText: 'Search books by title',
-            prefixIcon: const Icon(Icons.search),
+            hintText: 'Search by title, author...',
+            hintStyle: TextStyle(fontSize: 14, color: const Color(0xFF656388)),
+            prefixIcon: const Icon(Icons.search, color: Color(0xFF4F44E9)),
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(24),
               borderSide: BorderSide.none,
             ),
           ),

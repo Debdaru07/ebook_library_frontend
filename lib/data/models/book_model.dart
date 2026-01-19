@@ -13,17 +13,19 @@ class BookModel {
     this.coverId,
   });
 
-  factory BookModel.fromJson(Map<String, dynamic> json) {
+  factory BookModel.fromReadingLogJson(Map<String, dynamic> json) {
+    final work = json['work'] ?? {};
+
     return BookModel(
-      id: json['key'] ?? '',
-      title: json['title'] ?? 'Unknown Title',
+      id: work['key'] ?? '',
+      title: work['title'] ?? 'Unknown Title',
       author:
-          (json['author_name'] != null &&
-                  (json['author_name'] as List).isNotEmpty)
-              ? json['author_name'][0]
+          (work['author_names'] != null &&
+                  (work['author_names'] as List).isNotEmpty)
+              ? work['author_names'][0]
               : 'Unknown Author',
-      publishedYear: (json['first_publish_year']),
-      coverId: json['cover_i'],
+      publishedYear: work['first_publish_year'],
+      coverId: work['cover_id'],
     );
   }
 }

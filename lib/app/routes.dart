@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../features/home/home_screen.dart';
+import '../features/root/root_screen.dart';
 import '../features/search/search_screen.dart';
 
 class AppRoutes {
@@ -7,7 +7,7 @@ class AppRoutes {
   static const String search = '/search';
 
   static Map<String, WidgetBuilder> routes = {
-    home: (_) => const HomeScreen(),
+    home: (_) => const RootScreen(),
     search: (_) => const SearchScreen(),
   };
 }

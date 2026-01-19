@@ -4,6 +4,8 @@ class ApiConstants {
 
   static const String searchBaseUrl = 'https://openlibrary.org/search.json';
 
-  static String coverImageUrl(String coverId) =>
-      'https://covers.openlibrary.org/b/id/$coverId-M.jpg';
+  String coverUrl(int? coverId) {
+    if (coverId == null) return '';
+    return 'https://covers.openlibrary.org/b/id/$coverId-M.jpg';
+  }
 }
